@@ -14,7 +14,8 @@ const output = document.getElementById("output");
 
 //function to display input on screen
 function displayOnScreen() {
-    Array.from(buttons).forEach(button => {
+    //getElementByClassName return HTML collection so we need to convert it to array to be able to use forEach feature
+    Array.from(buttons).forEach(button => { 
         button.addEventListener("click", () => {
             const value = button.dataset.value;
     
@@ -38,12 +39,11 @@ prefixCalculator.addEventListener("click", () => {
 })
 
 function calculatingPostfixExpressions() {
-    output.innerHTML = " ";
+    output.innerHTML = "";
     displayOnScreen();
 }
 
 function calculatingPrefixExpressions() {
-    output.innerHTML = " ";
+    output.innerHTML = "";
     displayOnScreen();
-
 }
