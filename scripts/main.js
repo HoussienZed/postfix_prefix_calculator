@@ -92,13 +92,50 @@ function postfixExpressionsCalculator() {
     }
 
     output.innerHTML = result;
-    return;
 }
 
 
 
 function prefixExpressionsCalculator() {
+    const equation = input.innerHTML;
+    const reversedEquation = equation.split("").reverse().join("");
+    
+    let numbersStack = [];
+    let topElementIndex = 0;
+    let targetCharacter;
+    let firstNumber;
+    let secondNumber;
+    let result;
 
+    for (let i = 0; i < reversedEquation.length; i++) {
+        targetCharacter = parseInt(reversedEquation[i]);
+
+        if (!isNaN(targetCharacter)) {
+            numbersStack[topElementIndex] = targetCharacter;
+            topElementIndex ++;
+        } else {
+            topElementIndex --;
+            firstNumber = numbersStack[topElementIndex];
+            topElementIndex --;
+            secondNumber = numbersStack[topElementIndex];
+            
+
+            if (reversedEquation[i] == "+") {
+                result = firstNumber + secondNumber;
+            } else if (reversedEquation[i] == "-") {
+                result = firstNumber - secondNumber;
+            } else if (reversedEquation[i] == "*") {
+                result = firstNumber * secondNumber;
+            } else if (reversedEquation[i] == "/") {
+                result = firstNumber / secondNumber;
+            }
+            
+            numbersStack[topElementIndex] = result;
+            topElementIndex ++;
+        }
+    }
+
+    output.innerHTML = result;
 }
 
 
@@ -118,4 +155,6 @@ function calculatingPrefixExpressions() {
     displayOnScreen();
     clearScreen();
     deleteButton();
+
+    equals.addEventListener("click", prefixExpressionsCalculator);
 }
