@@ -10,3 +10,11 @@ const del = document.getElementById("delete");
 
 const input = document.getElementById("input");
 const output = document.getElementById("output");
+
+postfixCalculator.addEventListener("click", () => {
+    calculator.style.visibility = "visible";
+})
+
+prefixCalculator.addEventListener("click", () => {
+    calculator.style.visibility = "visible";
+})
