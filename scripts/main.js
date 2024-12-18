@@ -54,7 +54,11 @@ postfixCalculator.addEventListener("click", () => {
 
 prefixCalculator.addEventListener("click", () => {
     calculator.style.visibility = "visible";
-    calculatingPrefixExpressions();
+    input.innerHTML = "";
+    output.innerHTML = "";
+    if (!calculatorIsOn){
+        calculatingPrefixExpressions();
+    }
 })
 
 
