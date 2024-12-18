@@ -11,6 +11,8 @@ const del = document.getElementById("delete");
 const input = document.getElementById("input");
 const output = document.getElementById("output");
 
+let calculatorIsOn = false;
+
 
 //function to display input on screen
 function displayOnScreen() {
@@ -43,13 +45,16 @@ function deleteButton() {
 
 postfixCalculator.addEventListener("click", () => {
     calculator.style.visibility = "visible";
-    calculatingPostfixExpressions();
+    input.innerHTML = "";
+    output.innerHTML = "";
+    if (!calculatorIsOn){
+        calculatingPostfixExpressions();
+    }
 })
 
 prefixCalculator.addEventListener("click", () => {
     calculator.style.visibility = "visible";
     calculatingPrefixExpressions();
-
 })
 
 
@@ -107,6 +112,8 @@ function prefixExpressionsCalculator() {
     let secondNumber;
     let result;
 
+    calculatorIsOn = true;
+
     for (let i = 0; i < reversedEquation.length; i++) {
         targetCharacter = parseInt(reversedEquation[i]);
 
@@ -142,6 +149,9 @@ function prefixExpressionsCalculator() {
 function calculatingPostfixExpressions() {
     output.innerHTML = "";
     input.innerHTML = "";
+
+    calculatorIsOn = true;
+    
     displayOnScreen();
     clearScreen();
     deleteButton();
