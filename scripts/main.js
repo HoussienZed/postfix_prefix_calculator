@@ -34,6 +34,13 @@ function clearScreen() {
 }
 
 
+function deleteButton() {
+    del.addEventListener("click", () => {
+        output.innerHTML = output.innerHTML.slice(0, -1);
+    })
+}
+
+
 postfixCalculator.addEventListener("click", () => {
     calculator.style.visibility = "visible";
     calculatingPostfixExpressions();
@@ -45,16 +52,29 @@ prefixCalculator.addEventListener("click", () => {
 
 })
 
-function calculatingPostfixExpressions() {
-    output.innerHTML = "";
-    input.innerHTML = "";
-    displayOnScreen();
-    clearScreen();
+
+function postfixExpressionsCalculator() {
+
 }
 
-function calculatingPrefixExpressions() {
+
+function prefixExpressionsCalculator() {
+
+}
+
+
+function postfixExpressions() {
     output.innerHTML = "";
     input.innerHTML = "";
     displayOnScreen();
     clearScreen();
+    deleteButton();
+}
+
+function prefixExpressions() {
+    output.innerHTML = "";
+    input.innerHTML = "";
+    displayOnScreen();
+    clearScreen();
+    deleteButton();
 }
