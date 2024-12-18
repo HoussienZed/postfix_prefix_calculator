@@ -97,7 +97,11 @@ function postfixExpressionsCalculator() {
         }
     }
 
-    output.innerHTML = result;
+    if(!isNaN(result)) {
+        output.innerHTML = result;
+    } else {
+        output.innerHTML = "Wrong Expression";
+    }
 }
 
 
@@ -138,7 +142,11 @@ function prefixExpressionsCalculator() {
         }
     }
 
-    output.innerHTML = result;
+    if(!isNaN(result)) {
+        output.innerHTML = result;
+    } else {
+        output.innerHTML = "Wrong Expression";
+    }
 }
 
 
