@@ -61,7 +61,7 @@ body {
     margin: 10px;
 }
 
-.containerBox div button.clear, .containerBox div button.equals {
+.containerBox div button.clear, .containerBox div button.equals, #zero {
     width: 140px;
 }
 
