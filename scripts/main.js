@@ -17,10 +17,10 @@ function displayOnScreen() {
     //getElementByClassName return HTML collection so we need to convert it to array to be able to use forEach feature
     Array.from(buttons).forEach(button => { 
         button.addEventListener("click", () => {
-            const value = button.dataset.value;
+            const value = button.dataset.value; //returns a string
     
             if (value) {
-                output.innerHTML += value;
+                input.innerHTML += value; // returns a string
             }
         })
     })
@@ -36,7 +36,7 @@ function clearScreen() {
 
 function deleteButton() {
     del.addEventListener("click", () => {
-        output.innerHTML = output.innerHTML.slice(0, -1);
+        input.innerHTML = input.innerHTML.slice(0, -1);
     })
 }
 
@@ -54,8 +54,46 @@ prefixCalculator.addEventListener("click", () => {
 
 
 function postfixExpressionsCalculator() {
+    const equation = input.innerHTML;
+    
+    let numbersStack = [];
+    let topElementIndex = 0;
+    let targetCharacter;
+    let firstNumber;
+    let secondNumber;
+    let result;
 
+    for (let i = 0; i < equation.length; i++) {
+        targetCharacter = parseInt(equation[i]);
+
+        if (!isNaN(targetCharacter)) {
+            numbersStack[topElementIndex] = targetCharacter;
+            topElementIndex ++;
+        } else {
+            topElementIndex --;
+            firstNumber = numbersStack[topElementIndex];
+            topElementIndex --;
+            secondNumber = numbersStack[topElementIndex];
+            
+
+            if (equation[i] == "+") {
+                result = firstNumber + secondNumber;
+            } else if (equation[i] == "-") {
+                result = firstNumber - secondNumber;
+            } else if (equation[i] == "*") {
+                result = firstNumber * secondNumber;
+            } else if (equation[i] == "/") {
+                result = firstNumber / secondNumber;
+            }
+            
+            numbersStack[topElementIndex] = result;
+        }
+    }
+
+    output.innerHTML = result;
+    return;
 }
+
 
 
 function prefixExpressionsCalculator() {
@@ -63,15 +101,17 @@ function prefixExpressionsCalculator() {
 }
 
 
-function postfixExpressions() {
+function calculatingPostfixExpressions() {
     output.innerHTML = "";
     input.innerHTML = "";
     displayOnScreen();
     clearScreen();
     deleteButton();
+
+    equals.addEventListener("click", postfixExpressionsCalculator);
 }
 
-function prefixExpressions() {
+function calculatingPrefixExpressions() {
     output.innerHTML = "";
     input.innerHTML = "";
     displayOnScreen();
