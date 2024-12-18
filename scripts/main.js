@@ -26,6 +26,13 @@ function displayOnScreen() {
     })
 }
 
+function clearScreen() {
+    clear.addEventListener("click", () => {
+        output.innerHTML = "";
+        input.innerHTML = "";
+    })
+}
+
 
 postfixCalculator.addEventListener("click", () => {
     calculator.style.visibility = "visible";
@@ -40,10 +47,14 @@ prefixCalculator.addEventListener("click", () => {
 
 function calculatingPostfixExpressions() {
     output.innerHTML = "";
+    input.innerHTML = "";
     displayOnScreen();
+    clearScreen();
 }
 
 function calculatingPrefixExpressions() {
     output.innerHTML = "";
+    input.innerHTML = "";
     displayOnScreen();
+    clearScreen();
 }
