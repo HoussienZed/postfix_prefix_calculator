@@ -67,10 +67,7 @@ function postfixExpressionsCalculator() {
     
     let numbersStack = [];
     let topElementIndex = 0;
-    let targetCharacter;
-    let firstNumber;
-    let secondNumber;
-    let result;
+    let targetCharacter, firstNumber, secondNumber, result;
 
     for (let i = 0; i < equation.length; i++) {
         targetCharacter = parseInt(equation[i]);
@@ -111,12 +108,7 @@ function prefixExpressionsCalculator() {
     
     let numbersStack = [];
     let topElementIndex = 0;
-    let targetCharacter;
-    let firstNumber;
-    let secondNumber;
-    let result;
-
-    calculatorIsOn = true;
+    let targetCharacter, firstNumber, secondNumber, result;
 
     for (let i = 0; i < reversedEquation.length; i++) {
         targetCharacter = parseInt(reversedEquation[i]);
@@ -166,6 +158,8 @@ function calculatingPostfixExpressions() {
 function calculatingPrefixExpressions() {
     output.innerHTML = "";
     input.innerHTML = "";
+
+    calculatorIsOn = true;
     displayOnScreen();
     clearScreen();
     deleteButton();
