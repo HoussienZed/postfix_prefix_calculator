@@ -11,10 +11,39 @@ const del = document.getElementById("delete");
 const input = document.getElementById("input");
 const output = document.getElementById("output");
 
+
+//function to display input on screen
+function displayOnScreen() {
+    Array.from(buttons).forEach(button => {
+        button.addEventListener("click", () => {
+            const value = button.dataset.value;
+    
+            if (value) {
+                output.innerHTML += value;
+            }
+        })
+    })
+}
+
+
 postfixCalculator.addEventListener("click", () => {
     calculator.style.visibility = "visible";
+    calculatingPostfixExpressions();
 })
 
 prefixCalculator.addEventListener("click", () => {
     calculator.style.visibility = "visible";
+    calculatingPrefixExpressions();
+
 })
+
+function calculatingPostfixExpressions() {
+    output.innerHTML = " ";
+    displayOnScreen();
+}
+
+function calculatingPrefixExpressions() {
+    output.innerHTML = " ";
+    displayOnScreen();
+
+}
