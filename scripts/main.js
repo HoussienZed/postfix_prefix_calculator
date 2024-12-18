@@ -87,6 +87,7 @@ function postfixExpressionsCalculator() {
             }
             
             numbersStack[topElementIndex] = result;
+            topElementIndex ++;
         }
     }
 
