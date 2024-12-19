@@ -60,6 +60,7 @@ postfixCalculator.addEventListener("click", () => {
     //code to make the calculator hidden again
     if (!calculatorIsVisible) {
         calculator.style.visibility = "visible";
+        postfixDescription.style.visibility = "hidden";
         calculatorIsVisible = true;
     } else {
         calculator.style.visibility = "hidden";
@@ -70,7 +71,9 @@ postfixCalculator.addEventListener("click", () => {
 
 //showing description text for postfix calculator when hovering over
 postfixCalculator.addEventListener("mouseover", () => {
-    postfixDescription.style.visibility = "visible";
+    if(!calculatorIsVisible) {
+        postfixDescription.style.visibility = "visible";
+    }
 })
 
 postfixCalculator.addEventListener("mouseout", () => {
@@ -89,6 +92,7 @@ prefixCalculator.addEventListener("click", () => {
     //code to make the calculator hidden again
     if(!calculatorIsVisible) {
         calculator.style.visibility = "visible";
+        prefixDescription.style.visibility = "hidden";
         calculatorIsVisible = true;
     } else {
         calculator.style.visibility = "hidden";
@@ -99,7 +103,9 @@ prefixCalculator.addEventListener("click", () => {
 
 //showing description texts for prefix calculator when hovering over
 prefixCalculator.addEventListener("mouseover", () => {
-    prefixDescription.style.visibility = "visible";
+    if (!calculatorIsVisible) {
+        prefixDescription.style.visibility = "visible";
+    }
 })
 
 prefixCalculator.addEventListener("mouseout", () => {
