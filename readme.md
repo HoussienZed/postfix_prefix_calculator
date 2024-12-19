@@ -1,4 +1,4 @@
-<h1>Postfix Prefix Calculator</h1>
+<h1 style="text-align: center">Postfix Prefix Calculator</h1>
 <br>
 <br>
 <h2>Postfix Expressions</h2>
@@ -33,3 +33,5 @@ Result: 15
 <br>
 Result: 15
 </p>
+<br>
+<br>
