@@ -24,6 +24,10 @@ body {
     background-color: #3a4452;
 }
 
+.postfixExpression:hover, .prefixExpression:hover {
+    background-color: rgba(58, 68, 82, 0.9);
+}
+
 .postfixExpression button, .prefixExpression button {
     border-radius: 10px;
     font-size: 30px;
@@ -55,10 +59,18 @@ body {
     border-radius: 10px;
     height: 60px;
     width: 60px;
-    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2); 
     background: transparent;
     color: white;
     margin: 10px;
+}
+
+.containerBox div button:hover{
+    background-color: rgb(255, 132, 0);
+}
+
+.containerBox div button:active {
+    background-color: rgb(255, 132, 0);
 }
 
 .containerBox div button.clear, .containerBox div button.equals, #zero {
