@@ -20,7 +20,7 @@ Result: 15
 
 <h2>Prefix Expressions</h2>
 <br>
-<p>A prefix expression is a expression in which first operator comes and proceded by strings. Every prefix string longer than a single variable contains first and second operands followed by an operator.e.g. A,+A B ,*A B ,+ * A B/ C D.</p>
+<p>A prefix expression is an expression in which first operator comes and proceded by strings. Every prefix string longer than a single variable contains first and second operands followed by an operator.e.g. A,+A B ,*A B ,+ * A B/ C D.</p>
 <br>
 <p>For example:
 <br>Expression: + 9 * 2 3

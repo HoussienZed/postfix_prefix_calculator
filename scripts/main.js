@@ -29,6 +29,7 @@ function displayOnScreen() {
     })
 }
 
+//function to clear the screen
 function clearScreen() {
     clear.addEventListener("click", () => {
         output.innerHTML = "";
@@ -36,22 +37,23 @@ function clearScreen() {
     })
 }
 
-
+//function to delete last input character
 function deleteButton() {
     del.addEventListener("click", () => {
         input.innerHTML = input.innerHTML.slice(0, -1);
     })
 }
 
-
+//event to make the postfix calculator visible when chosen 
 postfixCalculator.addEventListener("click", () => {
     input.innerHTML = "";
     output.innerHTML = "";
     
-    if (!calculatorIsOn){
+    if (!calculatorIsOn){ //flag to run calculatingPostfixExpressions() only the once
         calculatingPostfixExpressions();
     } 
     
+    //code to make the calculator hidden again
     if (!calculatorIsVisible) {
         calculator.style.visibility = "visible";
         calculatorIsVisible = true;
@@ -61,14 +63,16 @@ postfixCalculator.addEventListener("click", () => {
     }
 })
 
+//event to make prefix calculator visible when chosen
 prefixCalculator.addEventListener("click", () => {
     input.innerHTML = "";
     output.innerHTML = "";
     
-    if (!calculatorIsOn){
+    if (!calculatorIsOn){ //flag to run calculatingPrefixExpressions() only the once
         calculatingPrefixExpressions();
     }
     
+    //code to make the calculator hidden again
     if(!calculatorIsVisible) {
         calculator.style.visibility = "visible";
         calculatorIsVisible = true;
@@ -78,6 +82,7 @@ prefixCalculator.addEventListener("click", () => {
     }
 })
 
+//function to calculate postfix expression executed when eqal button is clicked
 function postfixExpressionsCalculator() {
     const equation = input.innerHTML;
     
@@ -113,6 +118,7 @@ function postfixExpressionsCalculator() {
         }
     }
 
+    //code line that check the answer is a number or not
     if(!isNaN(result)) {
         output.innerHTML = result;
     } else {
@@ -120,7 +126,7 @@ function postfixExpressionsCalculator() {
     }
 }
 
-
+//function to calculate postfix expression executed when eqal button is clicked
 function prefixExpressionsCalculator() {
     const equation = input.innerHTML;
     const reversedEquation = equation.split("").reverse().join("");
@@ -156,7 +162,8 @@ function prefixExpressionsCalculator() {
             topElementIndex ++;
         }
     }
-
+    
+    //code line that check the answer is a number or not
     if(!isNaN(result)) {
         output.innerHTML = result;
     } else {
@@ -164,7 +171,7 @@ function prefixExpressionsCalculator() {
     }
 }
 
-
+//function for the postfix calculator
 function calculatingPostfixExpressions() {
     output.innerHTML = "";
     input.innerHTML = "";
@@ -179,6 +186,7 @@ function calculatingPostfixExpressions() {
     equals.addEventListener("click", postfixExpressionsCalculator);
 }
 
+//function for postfix calculator
 function calculatingPrefixExpressions() {
     output.innerHTML = "";
     input.innerHTML = "";
