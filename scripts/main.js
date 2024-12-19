@@ -143,13 +143,13 @@ function prefixExpressionsCalculator() {
             
 
             if (reversedEquation[i] == "+") {
-                result = secondNumber + firstNumber;
+                result = firstNumber + secondNumber;
             } else if (reversedEquation[i] == "-") {
-                result = secondNumber - firstNumber;
+                result = firstNumber - secondNumber;
             } else if (reversedEquation[i] == "*") {
-                result = secondNumber * firstNumber;
+                result = firstNumber * secondNumber;
             } else if (reversedEquation[i] == "/") {
-                result = secondNumber / firstNumber;
+                result = firstNumber / secondNumber;
             }
             
             numbersStack[topElementIndex] = result;
