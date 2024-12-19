@@ -99,13 +99,13 @@ function postfixExpressionsCalculator() {
             
 
             if (equation[i] == "+") {
-                result = firstNumber + secondNumber;
+                result = secondNumber + firstNumber;
             } else if (equation[i] == "-") {
-                result = firstNumber - secondNumber;
+                result = secondNumber - firstNumber;
             } else if (equation[i] == "*") {
-                result = firstNumber * secondNumber;
+                result = secondNumber * firstNumber;
             } else if (equation[i] == "/") {
-                result = firstNumber / secondNumber;
+                result = secondNumber / firstNumber;
             }
             
             numbersStack[topElementIndex] = result;
@@ -143,13 +143,13 @@ function prefixExpressionsCalculator() {
             
 
             if (reversedEquation[i] == "+") {
-                result = firstNumber + secondNumber;
+                result = secondNumber + firstNumber;
             } else if (reversedEquation[i] == "-") {
-                result = firstNumber - secondNumber;
+                result = secondNumber - firstNumber;
             } else if (reversedEquation[i] == "*") {
-                result = firstNumber * secondNumber;
+                result = secondNumber * firstNumber;
             } else if (reversedEquation[i] == "/") {
-                result = firstNumber / secondNumber;
+                result = secondNumber / firstNumber;
             }
             
             numbersStack[topElementIndex] = result;
