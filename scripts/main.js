@@ -12,6 +12,7 @@ const input = document.getElementById("input");
 const output = document.getElementById("output");
 
 let calculatorIsOn = false;
+let calculatorIsVisible = false;
 
 
 //function to display input on screen
@@ -46,27 +47,36 @@ function deleteButton() {
 postfixCalculator.addEventListener("click", () => {
     input.innerHTML = "";
     output.innerHTML = "";
+    
     if (!calculatorIsOn){
-        calculator.style.visibility = "visible";
         calculatingPostfixExpressions();
+    } 
+    
+    if (!calculatorIsVisible) {
+        calculator.style.visibility = "visible";
+        calculatorIsVisible = true;
     } else {
-        calculatorIsOn = false;
         calculator.style.visibility = "hidden";
+        calculatorIsVisible = false;
     }
 })
 
 prefixCalculator.addEventListener("click", () => {
     input.innerHTML = "";
     output.innerHTML = "";
+    
     if (!calculatorIsOn){
-        calculator.style.visibility = "visible";
         calculatingPrefixExpressions();
+    }
+    
+    if(!calculatorIsVisible) {
+        calculator.style.visibility = "visible";
+        calculatorIsVisible = true;
     } else {
-        calculatorIsOn = false;
         calculator.style.visibility = "hidden";
+        calculatorIsVisible = false;
     }
 })
-
 
 function postfixExpressionsCalculator() {
     const equation = input.innerHTML;
@@ -109,7 +119,6 @@ function postfixExpressionsCalculator() {
         output.innerHTML = "Wrong Expression";
     }
 }
-
 
 
 function prefixExpressionsCalculator() {
@@ -161,6 +170,7 @@ function calculatingPostfixExpressions() {
     input.innerHTML = "";
 
     calculatorIsOn = true;
+    calculatorIsVisible = true;
     
     displayOnScreen();
     clearScreen();
