@@ -114,3 +114,36 @@ body {
 .postfixDescription ol, .prefixDescription ol {
     margin-left: 20px;
 }
+
+@media screen and (max-width : 481px) {
+    .postfixExpression, .prefixExpression{
+        width: 240px;
+        height: 50px;
+    }
+
+    .postfixExpression button, .prefixExpression button{
+        font-size: 25px;
+    }
+
+    .containerBox div button {
+        height: 40px;
+        width: 40px;
+        font-size: 15px;
+    }
+
+    .containerBox div button.clear, .containerBox div button.equals {
+        width: 100px;
+    }
+
+    .screen {
+        height: 55px;
+    }
+
+    .input {
+        font-size: 15px;
+    }
+
+    .output {
+        font-size: 20px;
+    }
+}
