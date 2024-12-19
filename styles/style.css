@@ -97,3 +97,20 @@ body {
     font-weight: bold;
     color: white;
 }
+
+.bigContainer {
+    position: relative;
+}
+
+.postfixDescription, .prefixDescription {
+    background-color: rgba(58, 68, 82, 0.9);
+    position: absolute;
+    visibility: hidden;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+}
+
+.postfixDescription ol, .prefixDescription ol {
+    margin-left: 20px;
+}

@@ -11,6 +11,10 @@ const del = document.getElementById("delete");
 const input = document.getElementById("input");
 const output = document.getElementById("output");
 
+
+const prefixDescription = document.getElementsByClassName("prefixInstructions");
+const postfixDescription = document.getElementById("postfixInstructions");
+
 let calculatorIsOn = false;
 let calculatorIsVisible = false;
 
@@ -63,6 +67,16 @@ postfixCalculator.addEventListener("click", () => {
     }
 })
 
+
+//showing description text for postfix calculator when hovering over
+postfixCalculator.addEventListener("mouseover", () => {
+    postfixDescription.style.visibility = "visible";
+})
+
+postfixCalculator.addEventListener("mouseout", () => {
+    postfixDescription.style.visibility = "hidden";
+})
+
 //event to make prefix calculator visible when chosen
 prefixCalculator.addEventListener("click", () => {
     input.innerHTML = "";
@@ -81,6 +95,18 @@ prefixCalculator.addEventListener("click", () => {
         calculatorIsVisible = false;
     }
 })
+
+
+//showing description texts for prefix calculator when hovering over
+prefixCalculator.addEventListener("mouseover", () => {
+    prefixDescription.style.visibility = "visible";
+})
+
+prefixCalculator.addEventListener("mouseout", () => {
+    prefixDescription.style.visibility = "hidden";
+})
+
+
 
 //function to calculate postfix expression executed when eqal button is clicked
 function postfixExpressionsCalculator() {

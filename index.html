@@ -8,6 +8,7 @@
     <script src="./scripts/main.js" defer></script>
 </head>
 <body>
+    <h1>test</h1>
     <div class="postfixExpression">
         <button id="postFix">Postfix Expressions</button>
     </div>
@@ -16,44 +17,82 @@
         <button id="preFix">Prefix Expressions</button>
     </div>
 
-    <div class="containerBox" id="calculator">
-        <div class="screen">
-            <div class="input" id="input"><h2></h2></div>
-            <div class="output" id="output"><h1></h1></div>
-        </div>
-            
-        <div>
-            <button class="clear" id="clear">Clear</button>
-            <button id="delete"><ion-icon name="backspace"></ion-icon></button>
-            <button class="numbers" data-value="/">/</button>
-        </div>      
-    
-        <div>
-            <button class="numbers" data-value="7">7</button>
-            <button class="numbers" data-value="8">8</button>
-            <button class="numbers" data-value="9">9</button>
-            <button class="numbers" data-value="*">*</button>
-        </div>
-            
-        <div>
-            <button class="numbers" data-value="4">4</button>
-            <button class="numbers" data-value="5">5</button>
-            <button class="numbers" data-value="6">6</button>
-            <button class="numbers" data-value="+">+</button>
+    <div class="bigContainer">
+        <div class="postfixDescription" id="postfixInstructions">
+            <h2>Postfix Expressions</h2>
+            <br>
+            <p>A postfix expression (also called Reverse Polish Notation) is a single letter or an operator, preceded by two postfix strings. 
+                Every postfix string longer than a single variable contains first and second operands followed by an operator.e.g. A,A B +,A B + C D –.</p>
+            <br>
+            <p>For example: 
+            <br>Expression: 9 2 3 * +
+            <br>Steps:
+            <ol>
+                <li>Start with the first operator *: 2 * 3 = 6.</li>
+                <li>Add 9 + 6 = 15.</li>
+            </ol>
+            <br>
+            Result: 15</p>
         </div>
 
-        <div>
-            <button class="numbers" data-value="1">1</button>
-            <button class="numbers" data-value="2">2</button>
-            <button class="numbers" data-value="3">3</button>
-            <button class="numbers" data-value="-">-</button>
+        <div class="prefixDescription" id="prefixInstructions">
+            <h2>Prefix Expressions</h2>
+            <br>
+            <p>A prefix expression is an expression in which first operator comes and proceded by strings. 
+                Every prefix string longer than a single variable contains first and second operands followed by an operator.e.g. A,+A B ,*A B ,+ * A B/ C D.</p>
+            <br>
+            <p>For example:
+            <br>Expression: + 9 * 2 3
+            <br>Steps:
+            <ol>
+                <li>Start from the rightmost operand: 9 and * 2 3.</li>
+                <li>Evaluate * 2 3 → 2 * 3 = 6.</li>
+                <li>Add 9 + 6 = 15.</li>
+            </ol>
+            <br>
+            Result: 15
+            </p>
         </div>
 
-        <div>
-            <button class="numbers" data-value=" "><i><ion-icon name="arrow-forward"></ion-icon></i></button>
-            <button class="numbers" id="zero" data-value="0">0</button>
-            <button class="equals" id="equals">=</button>
-        </div>                          
+        <div class="containerBox" id="calculator">
+            <div class="screen">
+                <div class="input" id="input"><h2></h2></div>
+                <div class="output" id="output"><h1></h1></div>
+            </div>
+                
+            <div>
+                <button class="clear" id="clear">Clear</button>
+                <button id="delete"><ion-icon name="backspace"></ion-icon></button>
+                <button class="numbers" data-value="/">/</button>
+            </div>      
+        
+            <div>
+                <button class="numbers" data-value="7">7</button>
+                <button class="numbers" data-value="8">8</button>
+                <button class="numbers" data-value="9">9</button>
+                <button class="numbers" data-value="*">*</button>
+            </div>
+                
+            <div>
+                <button class="numbers" data-value="4">4</button>
+                <button class="numbers" data-value="5">5</button>
+                <button class="numbers" data-value="6">6</button>
+                <button class="numbers" data-value="+">+</button>
+            </div>
+
+            <div>
+                <button class="numbers" data-value="1">1</button>
+                <button class="numbers" data-value="2">2</button>
+                <button class="numbers" data-value="3">3</button>
+                <button class="numbers" data-value="-">-</button>
+            </div>
+
+            <div>
+                <button class="numbers" data-value=" "><i><ion-icon name="arrow-forward"></ion-icon></i></button>
+                <button class="numbers" id="zero" data-value="0">0</button>
+                <button class="equals" id="equals">=</button>
+            </div>                          
+        </div>
     </div>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
