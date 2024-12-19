@@ -44,20 +44,26 @@ function deleteButton() {
 
 
 postfixCalculator.addEventListener("click", () => {
-    calculator.style.visibility = "visible";
     input.innerHTML = "";
     output.innerHTML = "";
     if (!calculatorIsOn){
+        calculator.style.visibility = "visible";
         calculatingPostfixExpressions();
+    } else {
+        calculatorIsOn = false;
+        calculator.style.visibility = "hidden";
     }
 })
 
 prefixCalculator.addEventListener("click", () => {
-    calculator.style.visibility = "visible";
     input.innerHTML = "";
     output.innerHTML = "";
     if (!calculatorIsOn){
+        calculator.style.visibility = "visible";
         calculatingPrefixExpressions();
+    } else {
+        calculatorIsOn = false;
+        calculator.style.visibility = "hidden";
     }
 })
 
