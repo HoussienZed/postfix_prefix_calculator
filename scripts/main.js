@@ -12,7 +12,7 @@ const input = document.getElementById("input");
 const output = document.getElementById("output");
 
 
-const prefixDescription = document.getElementsByClassName("prefixInstructions");
+const prefixDescription = document.getElementById("prefixInstructions");
 const postfixDescription = document.getElementById("postfixInstructions");
 
 let calculatorIsOn = false;
