@@ -84,7 +84,8 @@ prefixCalculator.addEventListener("click", () => {
 
 //function to calculate postfix expression executed when eqal button is clicked
 function postfixExpressionsCalculator() {
-    const equation = input.innerHTML;
+    const inputExpression = input.innerHTML;
+    const equation = inputExpression.split(" ");
     
     let numbersStack = [];
     let topElementIndex = 0;
@@ -129,7 +130,7 @@ function postfixExpressionsCalculator() {
 //function to calculate postfix expression executed when eqal button is clicked
 function prefixExpressionsCalculator() {
     const equation = input.innerHTML;
-    const reversedEquation = equation.split("").reverse().join("");
+    const reversedEquation = equation.split(" ").reverse();
     
     let numbersStack = [];
     let topElementIndex = 0;

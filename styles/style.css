@@ -73,7 +73,7 @@ body {
     background-color: rgb(255, 132, 0);
 }
 
-.containerBox div button.clear, .containerBox div button.equals, #zero {
+.containerBox div button.clear, .containerBox div button.equals{
     width: 140px;
 }
 
