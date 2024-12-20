@@ -65,6 +65,10 @@ body {
     margin: 10px;
 }
 
+.attention{
+    color: white;
+}
+
 .containerBox div button:hover{
     background-color: rgb(255, 132, 0);
 }
